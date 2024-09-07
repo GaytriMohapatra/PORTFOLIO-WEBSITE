@@ -210,53 +210,110 @@ header.shadow{
     background: var(--main-color);
     border-radius: 0.5rem;
 }
-.html-bar{
-    width: 80%;
+/* Specific bar widths based on percentages */
+.html-bar {
+    width: 100%;
 }
-.css-bar{
-    width: 70%;
+
+.css-bar {
+    width: 100%;
 }
-.js-bar{
+
+.js-bar {
     width: 65%;
 }
-.figma-bar{
+
+.figma-bar {
     width: 90%;
+}
+.cpp-bar {
+    width: 100%;
+}
+
+.python-bar {
+    width: 100%;
+}
+
+.mysql-bar {
+    width: 100%;
 }
 
 /* Projects */
-.projects-content{
+.projects-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    gap: 1.5rem; /* Adjust gap between items */
     margin-top: 2rem;
 }
-.projects-img{
-    overflow:hidden;
-    border-radius: 0.5 rem;
+
+.projects-img {
+    overflow: hidden;
+    border-radius: 0.5rem;
 }
-.projects-img img{
+
+.projects-img img {
     width: 100%;
     display: block;
     height: 250px;
     border-radius: 5%;
 }
-.projects-img img:hover{
+
+.projects-img img:hover {
     transform: scale(1.1);
-    transition: 1s;
+    transition: 0.5s ease-in-out; /* Smoother and faster transition */
 }
 
+
 /* Contact */
-.contact-form{
+/* Contact Section */
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    font-size: var(--p-font);
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.email-block {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--hover);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-link {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--medium-font);
+}
+
+.email-block:hover {
+    background-color: var(--main-color);
+    transform: scale(1.05); /* Slightly enlarges the block on hover */
+}
+
+.email-block:active {
+    transform: scale(0.95); /* Slightly reduces the block size on click */
+}
+
+.contact-form {
     display: grid;
     place-items: center;
     margin-top: 2rem;
 }
-.contact-form form{
+
+.contact-form form {
     display: flex;
     flex-direction: column;
     width: 650px;
 }
-form input, textarea{
+
+form input, textarea {
     padding: 15px;
     border-radius: 0.5rem;
     width: 100%;
@@ -266,7 +323,8 @@ form input, textarea{
     margin-bottom: 1rem;
     color: var(--text-color);
 }
-.contact-button{
+
+.contact-button {
     width: 150px;
     cursor: pointer;
     background: var(--main-color);
@@ -277,15 +335,16 @@ form input, textarea{
     padding: 0.5rem 1.3rem;
     margin-left: 40%;
 }
-.contact-button:hover{
+
+.contact-button:hover {
     background: var(--hover);
     color: #E2EDFC;
 }
-form textarea{
+
+form textarea {
     resize: none;
     height: 200px;
 }
-/* Footer */
 
 /*Responsiveness via Media Queries */
 @media (max-width: 881px){
@@ -318,3 +377,69 @@ form textarea{
         padding: 5px 4%;
     }
 }
+
+#changing-text {
+    font-family: 'Poppins', sans-serif; /* You can choose any font you prefer */
+    font-weight: 700; /* This makes the text bold */
+    font-size: 2.5rem; /* Adjust the size as needed */
+    color: #ff6347; /* This adds a vibrant color, feel free to customize it */
+    text-transform: uppercase; /* Makes the text uppercase for more impact */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    transition: font-style 0.5s ease-in-out; /* Smooth transition for font style */
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.animate-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.animate-out {
+    animation: slideOut 0.5s ease-in-out forwards;
+}
+
+/* Additional Projects Section */
+.additional-projects {
+    margin-top: 2rem;
+    text-align: center; 
+}
+
+.additional-projects p {
+    font-size: var(--p-font);
+    color: var(--main-color);
+    font-weight: 400; 
+    margin: 0;
+}
+
+.additional-projects a {
+    color: var(--hover); 
+    font-weight: 500; 
+    text-decoration: none;
+}
+
+.additional-projects a:hover {
+    color: var(--main-color); 
+    text-decoration: underline; 
+}
+
